@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health Branding — Distill Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/starla-2" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Raleway', sans-serif; background: #FBFBFB; color: #1E1E1E; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; }
+
+  :root {
+    --ink: #163D4E;
+    --dark: #1C5066;
+    --mid: #306074;
+    --mist: #769CA5;
+    --cloud: #9BC3CD;
+    --pale: #D6EAEE;
+    --bg: #FBFBFB;
+    --n900: #1E1E1E;
+    --n600: #666666;
+    --n300: #D9D9D9;
+    --page-x: clamp(24px, 7vw, 120px);
+    --section-v: clamp(80px, 10vw, 140px);
+  }
+
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { display: flex; animation: marquee 28s linear infinite; width: max-content; }
+  .marquee-track:hover { animation-play-state: paused; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 58px; padding: 0 40px; border-radius: 1000px;
+    font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 15px;
+    letter-spacing: 0.03em; cursor: pointer; white-space: nowrap; line-height: 1;
+    transition: opacity 0.2s, transform 0.15s; border: none;
+  }
+  .pill:hover { opacity: 0.88; }
+
+  /* ── Constant Contact form overrides ─────────────────── */
+  .ctct-inline-form { background: transparent !important; }
+  .ctct-inline-form .ctct-form-wrapper,
+  .ctct-inline-form .ctct-form-embed,
+  .ctct-inline-form form { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important; }
+  .ctct-inline-form h2,
+  .ctct-inline-form .ctct-form-title { display: none !important; }
+  .ctct-inline-form label { font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 11px !important; color: #306074 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; margin-bottom: 8px !important; display: block !important; }
+  .ctct-inline-form input[type="text"],
+  .ctct-inline-form input[type="email"] { height: 54px !important; border: none !important; border-bottom: 2px solid rgba(22,61,78,0.2) !important; border-radius: 0 !important; padding: 0 4px !important; font-family: 'Raleway', sans-serif !important; font-weight: 500 !important; font-size: 16px !important; color: #1E1E1E !important; background: transparent !important; outline: none !important; width: 100% !important; box-shadow: none !important; }
+  .ctct-inline-form input[type="text"]:focus,
+  .ctct-inline-form input[type="email"]:focus { border-bottom-color: #163D4E !important; box-shadow: none !important; }
+  .ctct-inline-form .ctct-form-fields { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 28px !important; margin-bottom: 28px !important; }
+  .ctct-inline-form button[type="submit"],
+  .ctct-inline-form input[type="submit"] { background: #163D4E !important; color: #FFFFFF !important; border: none !important; border-radius: 999px !important; font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.05em !important; width: 100% !important; min-height: 54px !important; cursor: pointer !important; margin-top: 8px !important; transition: background 0.2s !important; text-transform: none !important; }
+  .ctct-inline-form button[type="submit"]:hover,
+  .ctct-inline-form input[type="submit"]:hover { background: #1C5066 !important; }
+  .ctct-inline-form .ctct-disclosure { font-family: 'Raleway', sans-serif !important; font-size: 12px !important; color: #306074 !important; line-height: 1.5 !important; margin-top: 12px !important; }
+  .ctct-inline-form .ctct-form-footer,
+  .ctct-inline-form .ctct-logo { display: none !important; }
+  .ctct-inline-form .ctct-form-errorMessage { font-family: 'Raleway', sans-serif !important; font-size: 13px !important; color: #c0392b !important; }
+
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr !important; }
+    .three-col { grid-template-columns: 1fr !important; }
+    .four-col { grid-template-columns: 1fr 1fr !important; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr !important; }
+    .hide-mobile { display: none !important; }
+    .problem-h2 { width: auto !important; font-size: clamp(44px, 8vw, 90px) !important; }
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr !important; }
+    .four-col { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<header id="site-nav" style="
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  padding: 0 var(--page-x); height: 72px;
+  display: flex; align-items: center;
+  background: transparent;
+  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+">
+  <a href="#hero" style="margin-right: auto; line-height: 0;">
+    <img src="assets/logo-white.svg" alt="Distill Design" style="height: 38px; filter: brightness(0) invert(1);"
+      onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span style=\'font-family:Raleway,sans-serif;font-weight:900;font-size:18px;color:white;letter-spacing:-0.02em;\'>Distill Design</span>')">
+  </a>
+  <nav style="display: flex; gap: 36px; margin-right: 40px;" class="hide-mobile">
+    <a href="#problem" style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; text-transform: lowercase;">why us</a>
+    <a href="#packages" style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; text-transform: lowercase;">packages</a>
+    <a href="#process" style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; text-transform: lowercase;">process</a>
+    <a href="#portfolio" style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; text-transform: lowercase;">work</a>
+  </nav>
+  <a href="#packages" class="pill" style="background: #FFFFFF; color: #163D4E; height: 44px; padding: 0 28px; font-size: 13px; letter-spacing: 0.04em;">See Packages</a>
+</header>
+
+<!-- ─── HERO ────────────────────────────────────────── -->
+<section id="hero" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden;">
+  <img
+    src="assets/hero-image-dd-offer-3.jpg"
+    alt="Therapy office interior"
+    style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%;"
+    onerror="this.style.display='none'; this.parentElement.style.background='#163D4E';">
+
+  <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(22,61,78,0.72) 0%, rgba(22,61,78,0.58) 100%);"></div>
+
+  <div style="
+    position: absolute; right: -80px; bottom: -60px; width: 560px; height: 560px;
+    background-image: url(assets/paint-splash.png); background-size: contain; background-repeat: no-repeat;
+    opacity: 0.12; pointer-events: none; transform: scaleX(-1) rotate(20deg);
+  "></div>
+
+  <div style="
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 var(--page-x) clamp(60px, 8vh, 100px);
+    max-width: 1480px; margin: 0 auto;
+  ">
+    <p style="font-family: 'Starla', Georgia, serif; font-size: 28px; color: #9BC3CD; margin-bottom: 20px; font-style: italic;">for therapists in private practice</p>
+    <h1 style="
+      font-family: Raleway, sans-serif; font-weight: 900;
+      font-size: clamp(44px, 6.5vw, 88px); color: #FFFFFF;
+      line-height: 1.0; max-width: 900px; margin-bottom: 36px;
+      letter-spacing: -0.02em; text-wrap: pretty;
+    ">Your Brand Should Feel As Professional As Your Practice</h1>
+    <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 18px; color: rgba(255,255,255,0.78); line-height: 30px; max-width: 580px; margin-bottom: 48px;">
+      You've spent years becoming a trusted therapist. Your website and brand should reflect that — without costing you months of back and forth or a budget you don't have.
+    </p>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <a href="#checklist" class="pill" style="background: #FFFFFF; color: #163D4E; font-weight: 700;">Get Your Free Brand Checklist</a>
+      <a href="#packages" class="pill" style="background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.55);">See Packages &amp; Pricing</a>
+    </div>
+  </div>
+
+  <div style="position: absolute; bottom: 32px; right: var(--page-x); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;">
+    <div style="width: 1px; height: 56px; background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);"></div>
+    <span style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl;">scroll</span>
+  </div>
+</section>
+
+<!-- ─── PROBLEM ─────────────────────────────────────── -->
+<section id="problem" style="background: #163D4E; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto;">
+
+    <div style="border-bottom: 1px solid rgba(155,195,205,0.2); padding-bottom: 56px; margin-bottom: 80px;" class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #9BC3CD; margin-bottom: 20px; font-style: italic;">the honest truth</p>
+      <h2 class="problem-h2" style="
+        font-family: Raleway, sans-serif; font-weight: 900; color: #FFFFFF;
+        letter-spacing: -0.02em; max-width: 860px; width: 860px; font-size: 90px; line-height: 1.1;
+      ">
+        You're great at what you do.<span style="color: #9BC3CD; display: block;">Your brand doesn't show it yet.</span>
+      </h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 90px;" class="two-col reveal">
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 18px; color: rgba(255,255,255,0.72); line-height: 32px;">
+        Most therapists in private practice are working with a logo made in Canva, a website cobbled together on Squarespace, or a brand that hasn't been touched since they qualified. It works — until a potential client lands on your site and clicks away because it doesn't feel credible.
+      </p>
+      <p style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 20px; color: #FFFFFF; line-height: 34px;">
+        "Your brand is the first impression. It either earns trust or loses it before you ever speak to them."
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(155,195,205,0.12);" class="three-col">
+      <div class="reveal" style="background: #163D4E; padding: 44px 36px; border-top: 3px solid #9BC3CD;">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 52px; color: rgba(155,195,205,0.15); display: block; margin-bottom: 20px; letter-spacing: -0.03em; line-height: 1;">01</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 19px; color: #FFFFFF; line-height: 1.3; margin-bottom: 14px;">Your website looks outdated or unprofessional</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">Before a potential client ever calls, they've already formed an impression. A dated website signals uncertainty before you've said a word.</p>
+      </div>
+      <div class="reveal" style="background: #163D4E; padding: 44px 36px; border-top: 3px solid transparent;">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 52px; color: rgba(155,195,205,0.15); display: block; margin-bottom: 20px; letter-spacing: -0.03em; line-height: 1;">02</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 19px; color: #FFFFFF; line-height: 1.3; margin-bottom: 14px;">Your brand doesn't reflect your specialty or personality</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">You've grown. Your approach has deepened. Your brand still looks like something you threw together in your first year of practice.</p>
+      </div>
+      <div class="reveal" style="background: #163D4E; padding: 44px 36px; border-top: 3px solid transparent;">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 52px; color: rgba(155,195,205,0.15); display: block; margin-bottom: 20px; letter-spacing: -0.03em; line-height: 1;">03</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 19px; color: #FFFFFF; line-height: 1.3; margin-bottom: 14px;">You're too busy to figure out where to start</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">Between client hours, admin, and everything else, overhauling your brand keeps falling to the bottom of the list.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── WHO THIS IS FOR ─────────────────────────────── -->
+<section style="background: #FBFBFB; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 110px); align-items: center;" class="two-col">
+
+    <div class="reveal" style="position: relative;">
+      <div style="overflow: hidden; aspect-ratio: 4/5;">
+        <img
+          src="assets/how-this-is-for.png"
+          alt="Who this is for"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          onerror="this.parentElement.style.background='#9BC3CD'; this.style.display='none';">
+      </div>
+      <div style="position: absolute; bottom: -28px; right: -28px; background: #163D4E; padding: 28px 32px; max-width: 240px;">
+        <p style="font-family: 'Starla', Georgia, serif; font-size: 20px; color: #9BC3CD; line-height: 1.4; font-style: italic;">built for therapists, by designers who get it</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #769CA5; margin-bottom: 18px; font-style: italic;">who this is for</p>
+      <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(32px, 4vw, 52px); color: #1E1E1E; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 44px;">Are you a mental health professional who...</h2>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid #D9D9D9;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #163D4E; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Is transitioning from a clinic or agency into private practice</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid #D9D9D9;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #163D4E; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Wants to attract a specific type of client or specialty</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid #D9D9D9;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #163D4E; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Has a brand that no longer represents who you are</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid #D9D9D9;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #163D4E; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Is ready to invest in something that works while you focus on your clients</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid #D9D9D9;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #163D4E; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Wants it done properly without the back and forth</p>
+        </div>
+      </div>
+      <div style="margin-top: 44px;">
+        <a href="#packages" class="pill" style="background: #163D4E; color: #FFFFFF;">Yes, That's Me — Show Me The Options</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PACKAGES ────────────────────────────────────── -->
+<section id="packages" style="background: #FFFFFF; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto;">
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; flex-wrap: wrap; gap: 24px;" class="reveal">
+      <div>
+        <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #769CA5; margin-bottom: 14px; font-style: italic;">transparent pricing</p>
+        <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 58px); color: #1E1E1E; line-height: 1.0; letter-spacing: -0.02em;">Choose where you are right now</h2>
+      </div>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; max-width: 340px; line-height: 26px;">All packages include a 50% deposit to begin and 50% on launch. Payment plans available on request.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #D9D9D9;" class="three-col">
+
+      <!-- Website Only -->
+      <div class="reveal" style="background: #FFFFFF; padding: 48px 36px; display: flex; flex-direction: column; position: relative;">
+        <p style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 11px; color: #769CA5; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Package</p>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 22px; color: #1E1E1E; margin-bottom: 20px; line-height: 1.2;">Website Only</h3>
+        <div style="display: flex; align-items: baseline; gap: 4px; margin-bottom: 8px;">
+          <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 48px; color: #163D4E; letter-spacing: -0.03em; line-height: 1;">$2,500</span>
+          <span style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 13px; color: #769CA5;">CAD</span>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 13px; color: #666666; margin-bottom: 28px; line-height: 20px; padding-bottom: 28px; border-bottom: 1px solid #D9D9D9;">Ideal for: Already have a logo you love</p>
+        <div style="flex: 1; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Brand discovery questionnaire</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Custom WordPress website</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Home, About, Services, Contact</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Mobile responsive design</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">One round of revisions</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Launch ready in 2–3 weeks</span></div>
+        </div>
+        <a href="mailto:hello@distilldesign.ca?subject=Website Only Package" class="pill" style="background: #163D4E; color: #FFFFFF; width: 100%; justify-content: center; font-size: 13px;">Get Started — Website Only</a>
+      </div>
+
+      <!-- Website + Logo Refresh (highlighted) -->
+      <div class="reveal" style="background: #163D4E; padding: 48px 36px; display: flex; flex-direction: column; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #9BC3CD;"></div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 11px; color: #9BC3CD; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Most Popular</p>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 22px; color: #FFFFFF; margin-bottom: 20px; line-height: 1.2;">Website + Logo Refresh</h3>
+        <div style="display: flex; align-items: baseline; gap: 4px; margin-bottom: 8px;">
+          <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 48px; color: #FFFFFF; letter-spacing: -0.03em; line-height: 1;">$3,500</span>
+          <span style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 13px; color: rgba(255,255,255,0.5);">CAD</span>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 20px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1);">Ideal for: Have a logo — want it modernized</p>
+        <div style="flex: 1; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #9BC3CD; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 14px; color: rgba(255,255,255,0.82); line-height: 22px; font-style: italic;">Everything in Website Only</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #9BC3CD; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.82); line-height: 22px;">Logo refinement &amp; modernization</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #9BC3CD; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.82); line-height: 22px;">Updated brand colours &amp; typography</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #9BC3CD; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.82); line-height: 22px;">Final logo files in all formats</span></div>
+        </div>
+        <a href="mailto:hello@distilldesign.ca?subject=Website + Logo Refresh Package" class="pill" style="background: #FFFFFF; color: #163D4E; width: 100%; justify-content: center; font-size: 13px;">Get Started — Website + Logo Refresh</a>
+      </div>
+
+      <!-- Full Brand + Website -->
+      <div class="reveal" style="background: #FFFFFF; padding: 48px 36px; display: flex; flex-direction: column; position: relative;">
+        <p style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 11px; color: #769CA5; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Package</p>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 22px; color: #1E1E1E; margin-bottom: 20px; line-height: 1.2;">Full Brand + Website</h3>
+        <div style="display: flex; align-items: baseline; gap: 4px; margin-bottom: 8px;">
+          <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 48px; color: #163D4E; letter-spacing: -0.03em; line-height: 1;">$4,000</span>
+          <span style="font-family: Raleway, sans-serif; font-weight: 600; font-size: 13px; color: #769CA5;">CAD</span>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 13px; color: #666666; margin-bottom: 28px; line-height: 20px; padding-bottom: 28px; border-bottom: 1px solid #D9D9D9;">Ideal for: Starting fresh or ready for a complete rebrand</p>
+        <div style="flex: 1; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 14px; color: #666666; line-height: 22px; font-style: italic;">Everything in Website Only</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Brand new custom logo design</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Full brand colour palette &amp; font system</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Brand style guide</span></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: #769CA5; flex-shrink: 0; margin-top: 8px;"></div><span style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: #666666; line-height: 22px;">Final logo files in all formats</span></div>
+        </div>
+        <a href="mailto:hello@distilldesign.ca?subject=Full Brand + Website Package" class="pill" style="background: #163D4E; color: #FFFFFF; width: 100%; justify-content: center; font-size: 13px;">Get Started — Full Brand + Website</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEAD MAGNET ─────────────────────────────────── -->
+<section id="checklist" style="background: #D6EAEE; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 100px); align-items: center;" class="two-col">
+
+    <div class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #306074; margin-bottom: 18px; font-style: italic;">free resource</p>
+      <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 50px); color: #163D4E; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px;">Not sure if your brand is working for you?</h2>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 17px; color: #306074; line-height: 29px;">Download our free Brand Confidence Checklist and find out in 5 minutes what might be costing you clients before they ever reach out.</p>
+    </div>
+
+    <div class="reveal">
+      <!-- Begin Constant Contact Inline Form Code -->
+      <div class="ctct-inline-form" data-form-id="96028e6c-103f-4a2b-8cf4-407585c9a3c1"></div>
+      <!-- End Constant Contact Inline Form Code -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PROCESS ─────────────────────────────────────── -->
+<section id="process" style="background: #1C5066; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto;">
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; flex-wrap: wrap; gap: 24px;" class="reveal">
+      <div>
+        <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #9BC3CD; margin-bottom: 14px; font-style: italic;">simple by design</p>
+        <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 64px); color: #FFFFFF; line-height: 1.0; letter-spacing: -0.02em;">Here is how it works</h2>
+      </div>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: rgba(255,255,255,0.55); max-width: 320px; line-height: 26px;">Four steps. No surprises. A brand you're proud of at the end.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(155,195,205,0.12);" class="four-col">
+      <div class="reveal" style="background: #1C5066; padding: 40px 28px; border-top: 1px solid #9BC3CD;">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 64px; color: rgba(155,195,205,0.1); display: block; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">01</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF; margin-bottom: 14px;">Discovery</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">You fill out a short questionnaire about your practice, ideal clients, and goals. No long meetings required.</p>
+      </div>
+      <div class="reveal" style="background: #1C5066; padding: 40px 28px; border-top: 1px solid rgba(155,195,205,0.15);">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 64px; color: rgba(155,195,205,0.1); display: block; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">02</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF; margin-bottom: 14px;">Design</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">We build your brand and website using your answers. You see the finished result — not fragments along the way.</p>
+      </div>
+      <div class="reveal" style="background: #1C5066; padding: 40px 28px; border-top: 1px solid rgba(155,195,205,0.15);">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 64px; color: rgba(155,195,205,0.1); display: block; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">03</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF; margin-bottom: 14px;">Revisions</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">You give feedback. We refine. One round of revisions is included in every package.</p>
+      </div>
+      <div class="reveal" style="background: #1C5066; padding: 40px 28px; border-top: 1px solid rgba(155,195,205,0.15);">
+        <span style="font-family: Raleway, sans-serif; font-weight: 900; font-size: 64px; color: rgba(155,195,205,0.1); display: block; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">04</span>
+        <h3 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF; margin-bottom: 14px;">Launch</h3>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 15px; color: rgba(255,255,255,0.55); line-height: 24px;">Your brand and website go live. You get all your files. You are done.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO ───────────────────────────────────── -->
+<section id="portfolio" style="background: #FBFBFB; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto;">
+
+    <div style="margin-bottom: 56px;" class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #769CA5; margin-bottom: 14px; font-style: italic;">our creative canvas</p>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+        <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 58px); color: #1E1E1E; line-height: 1.0; letter-spacing: -0.02em;">Therapists we have worked with</h2>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; max-width: 360px; line-height: 26px;">Real practices. Real results. Real brands that earn trust before the first session.</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;" class="portfolio-grid">
+
+      <a href="portfolio/ivana-psychotherapy.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-one-img.jpg" alt="Ivana Psychotherapy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#163D4E';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">Ivana Psychotherapy</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Branding + Web Design</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">Ivana Psychotherapy</p>
+        </div>
+      </a>
+
+      <a href="portfolio/natalie-haynes-psychotherapy.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-two-img.jpg" alt="Natalie Haynes Psychotherapy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#1C5066';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">Natalie Haynes Psychotherapy</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Brand Identity</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">Natalie Haynes Psychotherapy</p>
+        </div>
+      </a>
+
+      <a href="portfolio/pink-couch-psychotherapy.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-third-img.jpg" alt="The Pink Couch" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#306074';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">The Pink Couch</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Web Design</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">The Pink Couch</p>
+        </div>
+      </a>
+
+      <a href="portfolio/cornerstone-health.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-fourth-img.jpg" alt="Cornerstone Health" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#496D8D';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">Cornerstone Health</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Full Brand + Website</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">Cornerstone Health</p>
+        </div>
+      </a>
+
+      <a href="portfolio/dr-ibby-omole.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-fifth-img.jpg" alt="Dr. Ibby Omole" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#769CA5';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">Dr. Ibby Omole</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Brand Identity + Web</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">Dr. Ibby Omole</p>
+        </div>
+      </a>
+
+      <a href="portfolio/eugenio-counselling.html" class="reveal portfolio-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; display: block;">
+        <img src="assets/home-portfolio-sixth-img.jpg" alt="Eugenio Counselling" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onerror="this.parentElement.style.background='#9BC3CD';this.style.display='none';">
+        <div class="portfolio-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,61,78,0.88) 0%,rgba(22,61,78,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px;">
+          <h4 style="font-family:Raleway,sans-serif;font-weight:700;font-size:18px;color:#FFFFFF;margin-bottom:4px;">Eugenio Counselling</h4>
+          <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:13px;color:#9BC3CD;letter-spacing:0.04em;">Branding + Web Design</p>
+        </div>
+        <div class="portfolio-label" style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,61,78,0.6),transparent);transition:opacity 0.3s ease;">
+          <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);">Eugenio Counselling</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLIENT LOGOS ────────────────────────────────── -->
+<section style="background: #FFFFFF; padding: 52px 0; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; overflow: hidden;">
+  <div style="margin-bottom: 28px; text-align: center;">
+    <p style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 11px; color: #769CA5; letter-spacing: 0.14em; text-transform: uppercase;">Who We Work With</p>
+  </div>
+  <div style="overflow: hidden;">
+    <div class="marquee-track">
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/The-Career-Growth-Company-Logo-web-Final.png" alt="The Career Growth Company" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>The Career Growth Company</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/Natalie-Haynes-Psychotherapy-Logo-1.png" alt="Natalie Haynes Psychotherapy" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Natalie Haynes Psychotherapy</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/Eugenio-Counselling-Logo-web.png" alt="Eugenio Counselling" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Eugenio Counselling</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/IVANA-LOGO-Final_tagline.png" alt="Ivana Psychotherapy" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Ivana Psychotherapy</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/voicEd-Radio-Logo-01-1.jpg" alt="voicEd Radio" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>voicEd Radio</span>')"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/The-Career-Growth-Company-Logo-web-Final.png" alt="The Career Growth Company" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>The Career Growth Company</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/Natalie-Haynes-Psychotherapy-Logo-1.png" alt="Natalie Haynes Psychotherapy" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Natalie Haynes Psychotherapy</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/Eugenio-Counselling-Logo-web.png" alt="Eugenio Counselling" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Eugenio Counselling</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/IVANA-LOGO-Final_tagline.png" alt="Ivana Psychotherapy" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>Ivana Psychotherapy</span>')"></div>
+      <div style="flex-shrink:0;padding:0 48px;display:flex;align-items:center;"><img src="assets/voicEd-Radio-Logo-01-1.jpg" alt="voicEd Radio" style="height:44px;object-fit:contain;filter:grayscale(100%) opacity(0.55);max-width:160px;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:#9BC3CD;white-space:nowrap;\'>voicEd Radio</span>')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ────────────────────────────────── -->
+<section style="background: #163D4E; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto;">
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; flex-wrap: wrap; gap: 24px;" class="reveal">
+      <div>
+        <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #9BC3CD; margin-bottom: 14px; font-style: italic;">from our clients</p>
+        <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 56px); color: #FFFFFF; line-height: 1.0; letter-spacing: -0.02em;">What therapists say</h2>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="three-col">
+
+      <div class="reveal" style="padding: 44px 36px; border: 1px solid rgba(155,195,205,0.12); display: flex; flex-direction: column;">
+        <div style="font-family: Georgia, serif; font-size: 80px; color: #9BC3CD; line-height: 0.8; margin-bottom: 28px; font-weight: 700; opacity: 0.4;">"</div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: rgba(255,255,255,0.78); line-height: 28px; flex: 1; margin-bottom: 36px; font-style: italic;">
+          "I still can't believe how beautiful this looks, honestly. You are so creative and all I can say is, wow! Truly. It's like you entered my head and externalized all the feelings I have about my practice, my work, my life, and put it there."
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(155,195,205,0.15);">
+          <div style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(155,195,205,0.2);">
+            <img src="assets/Ikac-profile-dd.png" alt="Ivana Kolakovic" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#163D4E';this.style.display='none';">
+          </div>
+          <div>
+            <p style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 15px; color: #FFFFFF; margin-bottom: 2px;">Ivana Kolakovic</p>
+            <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 12px; color: #9BC3CD; line-height: 18px;">MA, Registered Mental Health Professional · Ivana Psychotherapy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="padding: 44px 36px; border: 1px solid rgba(155,195,205,0.12); display: flex; flex-direction: column;">
+        <div style="font-family: Georgia, serif; font-size: 80px; color: #9BC3CD; line-height: 0.8; margin-bottom: 28px; font-weight: 700; opacity: 0.4;">"</div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: rgba(255,255,255,0.78); line-height: 28px; flex: 1; margin-bottom: 36px; font-style: italic;">
+          "Thank you for asking the questions that bring out the fullness of the goodness that is within me. I feel more powerful and confident in my work. I absolutely love collaborating with you."
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(155,195,205,0.15);">
+          <div style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(155,195,205,0.2);">
+            <img src="assets/Sarah-Jane-Profile-Image-1FBa.png" alt="Sarah-Jane Vandenberg" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#1C5066';this.style.display='none';">
+          </div>
+          <div>
+            <p style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 15px; color: #FFFFFF; margin-bottom: 2px;">Sarah-Jane Vandenberg</p>
+            <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 12px; color: #9BC3CD; line-height: 18px;">Founder · The Career Growth Company</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="padding: 44px 36px; border: 1px solid rgba(155,195,205,0.12); display: flex; flex-direction: column;">
+        <div style="font-family: Georgia, serif; font-size: 80px; color: #9BC3CD; line-height: 0.8; margin-bottom: 28px; font-weight: 700; opacity: 0.4;">"</div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: rgba(255,255,255,0.78); line-height: 28px; flex: 1; margin-bottom: 36px; font-style: italic;">
+          "Thanks to the Distill Design team for being a great team to work with from beginning to end! Your creativity, perseverance and dedication has been amazing throughout this process."
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(155,195,205,0.15);">
+          <div style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(155,195,205,0.2);">
+            <img src="assets/Natalie-Haynes-B.A-Portrait-2.jpg" alt="Natalie Haynes" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#306074';this.style.display='none';">
+          </div>
+          <div>
+            <p style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 15px; color: #FFFFFF; margin-bottom: 2px;">Natalie Haynes</p>
+            <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 12px; color: #9BC3CD; line-height: 18px;">R.P., Registered Mental Health Professional · Natalie Haynes Psychotherapy</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── NOT FOR EVERYONE ────────────────────────────── -->
+<section style="background: #FBFBFB; padding: var(--section-v) var(--page-x);">
+  <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 100px); align-items: start;" class="two-col">
+
+    <div class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 26px; color: #769CA5; margin-bottom: 14px; font-style: italic;">a note on fit</p>
+      <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 50px); color: #1E1E1E; line-height: 1.05; letter-spacing: -0.02em;">This is not for everyone</h2>
+    </div>
+
+    <div class="reveal">
+      <div style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #D9D9D9;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #D9D9D9; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+          <div style="width: 8px; height: 1.5px; background: #D9D9D9; border-radius: 2px;"></div>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Therapists who want to be involved in every design decision along the way</p>
+      </div>
+      <div style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #D9D9D9;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #D9D9D9; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+          <div style="width: 8px; height: 1.5px; background: #D9D9D9; border-radius: 2px;"></div>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Practices looking for the cheapest option available</p>
+      </div>
+      <div style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #D9D9D9;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #D9D9D9; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;">
+          <div style="width: 8px; height: 1.5px; background: #D9D9D9; border-radius: 2px;"></div>
+        </div>
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 26px;">Anyone not ready to invest in their professional presence</p>
+      </div>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 16px; color: #666666; line-height: 28px; margin-top: 32px;">We work best with therapists who trust the process, value quality, and are ready to show up professionally online. If that is you, we would love to work with you.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ───────────────────────────────────── -->
+<section style="background: #163D4E; padding: var(--section-v) var(--page-x); position: relative; overflow: hidden;">
+  <div style="position: absolute; right: -80px; top: -80px; width: 600px; height: 600px; background-image: url(assets/paint-splash.png); background-size: contain; background-repeat: no-repeat; opacity: 0.07; transform: rotate(15deg); pointer-events: none;"></div>
+  <div style="max-width: 820px; margin: 0 auto; text-align: center; position: relative;">
+
+    <div class="reveal">
+      <p style="font-family: 'Starla', Georgia, serif; font-size: 28px; color: #9BC3CD; margin-bottom: 20px; font-style: italic;">let's get started</p>
+      <h2 style="font-family: Raleway, sans-serif; font-weight: 900; font-size: clamp(36px, 5.5vw, 68px); color: #FFFFFF; line-height: 1.0; letter-spacing: -0.025em; margin-bottom: 20px;">Ready to finally have a brand that feels like you?</h2>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 18px; color: rgba(255,255,255,0.65); line-height: 30px; margin: 0 auto 60px; max-width: 560px;">You focus on your clients. We'll handle your brand.</p>
+    </div>
+
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 44px;">
+      <a href="mailto:hello@distilldesign.ca?subject=Website Only Package" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:520px;height:62px;padding:0 28px;background:rgba(255,255,255,0.07);color:#FFFFFF;border:1px solid rgba(255,255,255,0.15);border-radius:1000px;transition:opacity 0.2s;">
+        <span style="font-family:Raleway,sans-serif;font-weight:700;font-size:15px;">Website Only</span>
+        <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:14px;opacity:0.65;">$2,500 CAD</span>
+      </a>
+      <a href="mailto:hello@distilldesign.ca?subject=Website + Logo Refresh Package" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:520px;height:62px;padding:0 28px;background:#FFFFFF;color:#163D4E;border-radius:1000px;transition:opacity 0.2s;">
+        <span style="font-family:Raleway,sans-serif;font-weight:700;font-size:15px;">Website + Logo Refresh</span>
+        <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:14px;opacity:0.65;">$3,500 CAD</span>
+      </a>
+      <a href="mailto:hello@distilldesign.ca?subject=Full Brand + Website Package" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:520px;height:62px;padding:0 28px;background:rgba(255,255,255,0.07);color:#FFFFFF;border:1px solid rgba(255,255,255,0.15);border-radius:1000px;transition:opacity 0.2s;">
+        <span style="font-family:Raleway,sans-serif;font-weight:700;font-size:15px;">Full Brand + Website</span>
+        <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:14px;opacity:0.65;">$4,000 CAD</span>
+      </a>
+    </div>
+
+    <div class="reveal">
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 14px;">Or if you're not ready yet:</p>
+      <a href="#checklist" class="pill" style="background: transparent; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.25); font-size: 14px;">Download The Free Brand Confidence Checklist First</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────── -->
+<footer style="background: #0E2A36; padding: 56px var(--page-x) 32px;">
+  <div style="max-width: 1280px; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 36px; margin-bottom: 48px;">
+      <div>
+        <img src="assets/logo-white.svg" alt="Distill Design" style="height: 40px; margin-bottom: 16px; filter: brightness(0) invert(1);"
+          onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<p style=\'font-family:Raleway,sans-serif;font-weight:900;font-size:18px;color:white;margin-bottom:16px;letter-spacing:-0.02em;\'>Distill Design</p>')">
+        <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4); max-width: 280px; line-height: 22px;">Distilled design, unclouded results.<br>Branding and web design for mental health professionals in Canada.</p>
+      </div>
+      <div style="display: flex; gap: 60px; flex-wrap: wrap;">
+        <div>
+          <h4 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 11px; color: #9BC3CD; margin-bottom: 16px; letter-spacing: 0.12em; text-transform: uppercase;">Packages</h4>
+          <a href="#packages" style="display: block; font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 10px;">Website Only — $2,500</a>
+          <a href="#packages" style="display: block; font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 10px;">Website + Logo Refresh — $3,500</a>
+          <a href="#packages" style="display: block; font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4);">Full Brand + Website — $4,000</a>
+        </div>
+        <div>
+          <h4 style="font-family: Raleway, sans-serif; font-weight: 700; font-size: 11px; color: #9BC3CD; margin-bottom: 16px; letter-spacing: 0.12em; text-transform: uppercase;">Studio</h4>
+          <a href="https://distilldesign.ca" target="_blank" rel="noopener" style="display: block; font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 10px;">distilldesign.ca</a>
+          <a href="mailto:hello@distilldesign.ca" style="display: block; font-family: Raleway, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.4);">hello@distilldesign.ca</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 12px; color: rgba(255,255,255,0.25);">© 2025 Distill Design. All rights reserved.</p>
+      <p style="font-family: Raleway, sans-serif; font-weight: 500; font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em;">distill design · distilled growth</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      nav.style.background = 'rgba(22,61,78,0.97)';
+      nav.style.backdropFilter = 'blur(16px)';
+      nav.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.borderBottom = 'none';
+    }
+  }, { passive: true });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Portfolio hover
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    const img = item.querySelector('img');
+    const overlay = item.querySelector('.portfolio-overlay');
+    const label = item.querySelector('.portfolio-label');
+    item.addEventListener('mouseenter', () => {
+      if (img) img.style.transform = 'scale(1.04)';
+      if (overlay) overlay.style.opacity = '1';
+      if (label) label.style.opacity = '0';
+    });
+    item.addEventListener('mouseleave', () => {
+      if (img) img.style.transform = 'scale(1)';
+      if (overlay) overlay.style.opacity = '0';
+      if (label) label.style.opacity = '1';
+    });
+  });
+
+</script>
+
+<!-- Constant Contact Widget Script -->
+<script src='//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js' async defer></script>
+
+</body>
+</html>

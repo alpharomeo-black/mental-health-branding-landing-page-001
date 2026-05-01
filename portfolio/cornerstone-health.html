@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornerstone Health — Distill Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Raleway', sans-serif; background: #FBFBFB; color: #1E1E1E; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  :root {
+    --ink: #163D4E; --dark: #1C5066; --mid: #306074;
+    --mist: #769CA5; --cloud: #9BC3CD;
+    --n900: #1E1E1E; --n600: #666666; --n300: #D9D9D9;
+    --page-x: clamp(24px, 7vw, 120px);
+    --section-v: clamp(64px, 8vw, 100px);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (max-width: 900px) {
+    .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr 1fr; }
+    .two-col { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 500px) {
+    .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:300;padding:0 var(--page-x);height:72px;display:flex;align-items:center;background:rgba(22,61,78,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <a href="../mental-health-branding.html" style="margin-right:auto;">
+    <img src="../assets/logo-white.svg" alt="Distill Design" style="height:34px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+  </a>
+  <a href="../mental-health-branding.html" style="font-family:Raleway,sans-serif;font-weight:600;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:0.05em;">← Back to Mental Health Branding</a>
+</header>
+
+<!-- HERO -->
+<section style="background:linear-gradient(105deg,rgba(22,61,78,0.52) 0%,rgba(22,61,78,0.338) 60%,rgba(22,61,78,0.182) 100%),url('../assets/cornerstone-health-hero-banner.jpg') center/cover no-repeat;padding:140px var(--page-x) 80px;text-align:center;">
+  <div style="max-width:900px;margin:0 auto;">
+    <p style="font-family:Raleway,sans-serif;font-weight:600;font-size:11px;color:var(--cloud);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:40px;">Portfolio — Full Brand + Website</p>
+    <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-white-logo.png" alt="Cornerstone Health Logo" style="max-height:120px;margin:0 auto 48px;" onerror="this.style.display='none'">
+    <h1 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;margin-bottom:32px;">Cornerstone Health</h1>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Logo Design</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Mood Board</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Brand Board</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Social Media</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Website Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- MOOD IMAGES -->
+<section style="background:#000;padding:0;">
+  <div class="grid-4" style="gap:2px;">
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-image-one.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-image-two.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-image-third.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-image-fourth.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+  </div>
+</section>
+
+<!-- ABOUT + DISTILLING -->
+<section style="background:#FFFFFF;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);" class="two-col">
+    <div class="reveal">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--mist);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">About the Client</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(26px,3vw,38px);color:var(--n900);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px;">Nicole Meier, ND</h2>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;margin-bottom:16px;">The realization of a dream, Cornerstone Health Centre is the brainchild of Nicole Meier, ND. Located in Georgetown, this ecological, complementary health clinic is a manifestation of Nicole's vision.</p>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;">The practitioners were selected for their expertise across physical, emotional, and spiritual healthcare. The clinic features an ecological renovation and offers educational resources on detox, meditation, and emotional wellness.</p>
+    </div>
+    <div class="reveal">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--mist);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Distilling Required</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(26px,3vw,38px);color:var(--n900);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px;">The Challenge</h2>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;margin-bottom:24px;">The client sought a refreshed brand identity that honoured existing recognition while signaling growth. Rather than a complete redesign, the approach involved a strategic redesign — infusing the existing emblem with a fresh aesthetic.</p>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;">This provided comfort and familiarity for existing clients alongside an evolution that would attract a new audience.</p>
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-colour-palette.png" alt="Colour palette" style="margin-top:32px;max-width:100%;" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STYLE GUIDE -->
+<section style="background:#FBFBFB;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:56px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Brand Identity</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);color:#163D4E;line-height:1.05;letter-spacing:-0.02em;">Brand Style Guide</h2>
+    </div>
+
+    <div class="reveal" style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:48px;margin-bottom:4px;text-align:center;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:32px;">Main Logo</p>
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-main-logo.png" alt="Cornerstone Health Logo" style="max-height:120px;margin:0 auto;" onerror="this.style.display='none'">
+    </div>
+
+    <div class="reveal grid-3" style="margin-bottom:4px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:32px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-logo-variation-one.png" alt="" style="max-height:100px;max-width:100%;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:32px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-logo-variation-two.png" alt="" style="max-height:100px;max-width:100%;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:32px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-logo-variation-third.png" alt="" style="max-height:100px;max-width:100%;" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="reveal grid-2" style="margin-bottom:4px;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-colour-palette-format-one.png" alt="Palette 1" style="width:100%;" onerror="this.style.display='none'">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-colour-palette-format-two.png" alt="Palette 2" style="width:100%;" onerror="this.style.display='none'">
+    </div>
+
+    <div class="reveal grid-2" style="margin-bottom:4px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:48px;">
+        <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:20px;">Typeface — Primary</p>
+        <p style="font-size:40px;color:#24323A;font-weight:400;line-height:1;margin-bottom:16px;font-family:Georgia,serif;">Goudy Old Style</p>
+        <p style="font-family:Georgia,serif;font-size:14px;color:#727B80;line-height:22px;">abcdefghijklmnopqrstuvwxyz<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>$ — &amp;?!()–":;.,</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:48px;">
+        <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:20px;">Typeface — Secondary</p>
+        <p style="font-size:40px;color:#24323A;font-weight:900;line-height:1;margin-bottom:16px;letter-spacing:0.04em;">Futura Std Heavy</p>
+        <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:14px;color:#727B80;line-height:22px;letter-spacing:0.04em;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>$ — &amp;?!()–":;.,</p>
+      </div>
+    </div>
+
+    <div class="reveal grid-4" style="margin-bottom:4px;">
+      <div style="overflow:hidden;aspect-ratio:1;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-patterns-image-one.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+      <div style="overflow:hidden;aspect-ratio:1;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-patterns-image-two.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+      <div style="overflow:hidden;aspect-ratio:1;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-patterns-image-third.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+      <div style="overflow:hidden;aspect-ratio:1;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-patterns-image-fourth.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    </div>
+
+    <div class="reveal grid-5" style="margin-bottom:4px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:24px;display:flex;align-items:center;justify-content:center;min-height:120px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-iconography-one.png" alt="" style="max-height:70px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:24px;display:flex;align-items:center;justify-content:center;min-height:120px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-iconography-two.png" alt="" style="max-height:70px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:24px;display:flex;align-items:center;justify-content:center;min-height:120px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-iconography-third.png" alt="" style="max-height:70px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:24px;display:flex;align-items:center;justify-content:center;min-height:120px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-iconography-fourth.png" alt="" style="max-height:70px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:24px;display:flex;align-items:center;justify-content:center;min-height:120px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-iconography-fifth.png" alt="" style="max-height:70px;" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section style="background:#0E2A36;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:48px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--cloud);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Applied Design</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;">Brand in the Wild</h2>
+    </div>
+    <div class="grid-3 reveal" style="gap:3px;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-one.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-second.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-third.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-fourth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-fifth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/cornerstone-health-mockup-img-sixth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL + WEBSITE -->
+<section style="background:#FBFBFB;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:48px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--mist);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Digital</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);color:var(--n900);line-height:1.05;letter-spacing:-0.02em;">Website</h2>
+    </div>
+    <div class="reveal">
+      <img src="https://distilldesign.ca/wp-content/uploads/2026/01/screencapture-2026-01-07T10_33_35.179Z.png" alt="Website Preview" style="max-width:1100px;display:block;margin:0 auto;" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT NAV -->
+<section style="background:#FFFFFF;padding:40px var(--page-x);border-top:1px solid var(--n300);border-bottom:1px solid var(--n300);">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+    <a href="ivana-psychotherapy.html" style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;">← Ivana Psychotherapy</a>
+    <a href="dr-ibby-omole.html" style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;">Dr. Ibby Omole →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--ink);padding:var(--section-v) var(--page-x);text-align:center;">
+  <div style="max-width:680px;margin:0 auto;" class="reveal">
+    <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4.5vw,52px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px;">Ready to refine your brand?</h2>
+    <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:17px;color:rgba(255,255,255,0.65);line-height:28px;margin-bottom:40px;"><strong style="color:#FFFFFF;font-weight:700;">Join us</strong> on a journey to refine and elevate your brand, infusing it with creativity, purpose, and clarity.</p>
+    <a href="../mental-health-branding.html#packages" style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 40px;border-radius:1000px;background:#FFFFFF;color:var(--ink);font-family:Raleway,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;">See Our Packages</a>
+  </div>
+</section>
+
+<footer style="background:#0E2A36;padding:40px var(--page-x) 24px;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <img src="../assets/logo-white.svg" alt="Distill Design" style="height:32px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+    <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:12px;color:rgba(255,255,255,0.25);">© 2025 Distill Design. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

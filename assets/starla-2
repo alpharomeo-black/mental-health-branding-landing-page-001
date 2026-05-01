@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Starla';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Starla'), url('https://fonts.cdnfonts.com/s/19246/Starla-Normal.woff') format('woff');
+}
+@font-face {
+    font-family: 'Starla';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Starla'), url('https://fonts.cdnfonts.com/s/19246/Starla-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Starla';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Starla'), url('https://fonts.cdnfonts.com/s/19246/StarlaGX.woff') format('woff');
+}
+@font-face {
+    font-family: 'Starla';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Starla'), url('https://fonts.cdnfonts.com/s/19246/Starla-Light.woff') format('woff');
+}
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Ibby Omole — Distill Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Raleway', sans-serif; background: #FBFBFB; color: #1E1E1E; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  :root {
+    --ink: #163D4E; --dark: #1C5066; --mid: #306074;
+    --mist: #769CA5; --cloud: #9BC3CD;
+    --n900: #1E1E1E; --n600: #666666; --n300: #D9D9D9;
+    --page-x: clamp(24px, 7vw, 120px);
+    --section-v: clamp(64px, 8vw, 100px);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (max-width: 900px) {
+    .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+    .two-col { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 500px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:300;padding:0 var(--page-x);height:72px;display:flex;align-items:center;background:rgba(22,61,78,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <a href="../mental-health-branding.html" style="margin-right:auto;">
+    <img src="../assets/logo-white.svg" alt="Distill Design" style="height:34px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+  </a>
+  <a href="../mental-health-branding.html" style="font-family:Raleway,sans-serif;font-weight:600;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:0.05em;">← Back to Mental Health Branding</a>
+</header>
+
+<!-- HERO -->
+<section style="background:linear-gradient(105deg,rgba(73,109,141,0.52) 0%,rgba(73,109,141,0.338) 60%,rgba(73,109,141,0.182) 100%),url('../assets/Dr.-Ibby-Omole-Logo-banner.jpg') center/cover no-repeat;padding:140px var(--page-x) 80px;text-align:center;">
+  <div style="max-width:900px;margin:0 auto;">
+    <p style="font-family:Raleway,sans-serif;font-weight:600;font-size:11px;color:var(--cloud);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:40px;">Portfolio — Brand Identity + Infographics</p>
+    <img src="https://distilldesign.ca/wp-content/uploads/2024/05/Dr.-Ibby-Omole-Logo.png" alt="Dr. Ibby Omole Logo" style="max-height:120px;margin:0 auto 48px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+    <h1 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;margin-bottom:32px;">Dr. Ibby Omole</h1>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Logo Design</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Brand Identity</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Infographics</span>
+      <span style="font-family:Raleway,sans-serif;font-weight:600;font-size:12px;color:var(--cloud);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(155,195,205,0.3);padding:8px 20px;border-radius:100px;">Brand Strategy</span>
+    </div>
+  </div>
+</section>
+
+<!-- MOOD IMAGES -->
+<section style="background:#000;padding:0;">
+  <div class="grid-4" style="gap:2px;">
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-image-one.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-image-two.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-image-third.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="aspect-ratio:1;overflow:hidden;"><img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-image-fourth.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+  </div>
+</section>
+
+<!-- ABOUT + DISTILLING -->
+<section style="background:#FFFFFF;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);" class="two-col">
+    <div class="reveal">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--mist);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">About the Client</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(26px,3vw,38px);color:var(--n900);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px;">Dr. Ibby Omole, ND</h2>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;margin-bottom:16px;">Embark on a journey of natural healing in Burlington, Ontario, guided by the dedicated naturopathic care of Dr. Ibby Omole, ND. A registered Naturopathic Doctor offering personalized healthcare services focused on holistic wellness.</p>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;">Dr. Omole blends evidence-based natural therapies with compassionate care, helping patients achieve lasting health and vitality through individualized treatment plans.</p>
+    </div>
+    <div class="reveal">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--mist);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Distilling Required</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(26px,3vw,38px);color:var(--n900);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px;">The Challenge</h2>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;margin-bottom:24px;">Dr. Ibby sought a creative brand that resonated with her vision. We crafted a logo, a series of infographics, and a brand strategy that aligns with her personality and professional identity.</p>
+      <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:16px;color:var(--n600);line-height:28px;">The design had to balance the clinical authority of a naturopathic doctor with the warmth and approachability her practice is known for.</p>
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-colour-palette.png" alt="Colour palette" style="margin-top:32px;max-width:100%;" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STYLE GUIDE -->
+<section style="background:#FBFBFB;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:56px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Brand Identity</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);color:#163D4E;line-height:1.05;letter-spacing:-0.02em;">Brand Style Guide</h2>
+    </div>
+
+    <div class="reveal" style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:48px;margin-bottom:4px;text-align:center;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:32px;">Main Logo</p>
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-colour-logo.png" alt="Dr. Ibby Omole Logo" style="max-height:120px;margin:0 auto;" onerror="this.style.display='none'">
+    </div>
+
+    <div class="reveal grid-2" style="margin-bottom:4px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:32px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-logo-variation-one.png" alt="" style="max-height:100px;max-width:100%;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:32px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-logo-variation-two.png" alt="" style="max-height:100px;max-width:100%;" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:4px;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-colour-patlete.png" alt="Colour palette" style="width:100%;" onerror="this.style.display='none'">
+    </div>
+
+    <div class="reveal" style="background:#FFFFFF;border:1px solid #DCE5E7;box-shadow:0 4px 20px rgba(11,63,85,0.08);padding:48px;margin-bottom:4px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:#4F7894;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:20px;">Typeface</p>
+      <p style="font-size:48px;color:#24323A;font-weight:400;line-height:1;margin-bottom:16px;">Champagne &amp; Limousines</p>
+      <p style="font-family:Raleway,sans-serif;font-weight:300;font-size:14px;color:#727B80;line-height:22px;">abcdefghijklmnopqrstuvwxyz &nbsp; ABCDEFGHIJKLMNOPQRSTUVWXYZ &nbsp; $ — &amp;?!()–":;.,</p>
+    </div>
+
+    <div class="reveal grid-3" style="margin-bottom:4px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:32px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-element-one.png" alt="" style="max-height:100px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:32px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-element-two.png" alt="" style="max-height:100px;" onerror="this.style.display='none'">
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE5E7;padding:32px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-element-three.png" alt="" style="max-height:100px;" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section style="background:#0E2A36;padding:var(--section-v) var(--page-x);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:48px;">
+      <p style="font-family:Raleway,sans-serif;font-weight:700;font-size:11px;color:var(--cloud);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Applied Design</p>
+      <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;">Brand in the Wild</h2>
+    </div>
+    <div class="grid-3 reveal" style="gap:3px;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-one.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-two.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-third.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-fourth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-fifth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <img src="https://distilldesign.ca/wp-content/uploads/2024/05/dr-ibby-omole-mockup-image-sixth.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT NAV -->
+<section style="background:#FFFFFF;padding:40px var(--page-x);border-top:1px solid var(--n300);border-bottom:1px solid var(--n300);">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+    <a href="cornerstone-health.html" style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;">← Cornerstone Health</a>
+    <a href="pink-couch-psychotherapy.html" style="font-family:Raleway,sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;">Pink Couch Psychotherapy →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--ink);padding:var(--section-v) var(--page-x);text-align:center;">
+  <div style="max-width:680px;margin:0 auto;" class="reveal">
+    <h2 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(32px,4.5vw,52px);color:#FFFFFF;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px;">Ready to refine your brand?</h2>
+    <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:17px;color:rgba(255,255,255,0.65);line-height:28px;margin-bottom:40px;"><strong style="color:#FFFFFF;font-weight:700;">Join us</strong> on a journey to refine and elevate your brand, infusing it with creativity, purpose, and clarity.</p>
+    <a href="../mental-health-branding.html#packages" style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 40px;border-radius:1000px;background:#FFFFFF;color:var(--ink);font-family:Raleway,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;">See Our Packages</a>
+  </div>
+</section>
+
+<footer style="background:#0E2A36;padding:40px var(--page-x) 24px;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <img src="../assets/logo-white.svg" alt="Distill Design" style="height:32px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+    <p style="font-family:Raleway,sans-serif;font-weight:500;font-size:12px;color:rgba(255,255,255,0.25);">© 2025 Distill Design. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
