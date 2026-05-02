@@ -46,26 +46,27 @@
   .pill:hover { opacity: 0.88; }
 
   /* ── Constant Contact form overrides ─────────────────── */
-  .ctct-inline-form { background: transparent !important; }
-  .ctct-inline-form .ctct-form-wrapper,
-  .ctct-inline-form .ctct-form-embed,
-  .ctct-inline-form form { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important; }
-  .ctct-inline-form h2,
-  .ctct-inline-form .ctct-form-title { display: none !important; }
-  .ctct-inline-form label { font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 11px !important; color: #306074 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; margin-bottom: 8px !important; display: block !important; }
-  .ctct-inline-form input[type="text"],
-  .ctct-inline-form input[type="email"] { height: 54px !important; border: none !important; border-bottom: 2px solid rgba(22,61,78,0.2) !important; border-radius: 0 !important; padding: 0 4px !important; font-family: 'Raleway', sans-serif !important; font-weight: 500 !important; font-size: 16px !important; color: #1E1E1E !important; background: transparent !important; outline: none !important; width: 100% !important; box-shadow: none !important; }
-  .ctct-inline-form input[type="text"]:focus,
-  .ctct-inline-form input[type="email"]:focus { border-bottom-color: #163D4E !important; box-shadow: none !important; }
-  .ctct-inline-form .ctct-form-fields { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 28px !important; margin-bottom: 28px !important; }
-  .ctct-inline-form button[type="submit"],
-  .ctct-inline-form input[type="submit"] { background: #163D4E !important; color: #FFFFFF !important; border: none !important; border-radius: 999px !important; font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.05em !important; width: 100% !important; min-height: 54px !important; cursor: pointer !important; margin-top: 8px !important; transition: background 0.2s !important; text-transform: none !important; }
-  .ctct-inline-form button[type="submit"]:hover,
-  .ctct-inline-form input[type="submit"]:hover { background: #1C5066 !important; }
-  .ctct-inline-form .ctct-disclosure { font-family: 'Raleway', sans-serif !important; font-size: 12px !important; color: #306074 !important; line-height: 1.5 !important; margin-top: 12px !important; }
-  .ctct-inline-form .ctct-form-footer,
-  .ctct-inline-form .ctct-logo { display: none !important; }
-  .ctct-inline-form .ctct-form-errorMessage { font-family: 'Raleway', sans-serif !important; font-size: 13px !important; color: #c0392b !important; }
+  .ctct-inline-form,
+  .ctct-form-container,
+  .ctct-form-embed,
+  .ctct-form-defaults,
+  .ctct-form-custom { background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; margin: 0 !important; }
+  .ctct-form-header,
+  .ctct-inline-form .ctct-form-title,
+  .ctct-form-footer,
+  .ctct-logo { display: none !important; }
+  .ctct-form-text { font-family: 'Raleway', sans-serif !important; font-size: 14px !important; color: #306074 !important; line-height: 1.6 !important; margin-bottom: 24px !important; }
+  .ctct-form-field { margin-bottom: 20px !important; }
+  .ctct-form-field label { font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 11px !important; color: #306074 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; margin-bottom: 8px !important; display: block !important; }
+  .ctct-form-field input[type="text"],
+  .ctct-form-field input[type="email"] { height: 54px !important; border: none !important; border-bottom: 2px solid rgba(22,61,78,0.25) !important; border-radius: 0 !important; padding: 0 4px !important; font-family: 'Raleway', sans-serif !important; font-weight: 500 !important; font-size: 16px !important; color: #163D4E !important; background: transparent !important; outline: none !important; width: 100% !important; box-shadow: none !important; }
+  .ctct-form-field input[type="text"]:focus,
+  .ctct-form-field input[type="email"]:focus { border-bottom-color: #163D4E !important; }
+  .ctct-form-button { background: #163D4E !important; color: #FFFFFF !important; border: none !important; border-radius: 999px !important; font-family: 'Raleway', sans-serif !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.05em !important; width: 100% !important; min-height: 54px !important; cursor: pointer !important; margin-top: 16px !important; transition: background 0.2s !important; text-transform: none !important; }
+  .ctct-form-button:hover { background: #1C5066 !important; }
+  .ctct-gdpr-text,
+  #gdpr_text { font-family: 'Raleway', sans-serif !important; font-size: 12px !important; color: #306074 !important; line-height: 1.5 !important; margin-top: 12px !important; }
+  .ctct-form-errorMessage { font-family: 'Raleway', sans-serif !important; font-size: 13px !important; color: #c0392b !important; }
 
   @media (max-width: 900px) {
     .two-col { grid-template-columns: 1fr !important; }
